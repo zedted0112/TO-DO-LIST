@@ -1,0 +1,272 @@
+* {
+    transition: all .3s ease;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --backgroundColour: rgba(97, 167, 199, 0.487);
+    --contentBoxColour: rgba(255, 218, 185, 0.522);
+    --headerimg: url('./images/day.jpg');
+    --textColor: black;
+    --toogle: 0;
+    ;
+}
+
+.dark {
+    --textColor: white;
+    --backgroundColour: black;
+    --contentBoxColour: rgba(128, 128, 128, 0.707);
+    --headerimg: url('./images/dark.png');
+    --toogle: 25px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--backgroundColour);
+    font-family: 'Titillium Web', sans-serif;
+    transition: all .5s linear;
+}
+
+
+/* -------todo_heading */
+
+.todo-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: red;
+}
+
+.todo-name #firstPart {
+    color: var(--textColor);
+}
+
+
+/* ------------ container ------------ */
+
+.container {
+    height: auto;
+    border: 2px solid var(--textColor);
+    box-shadow: 1px 2px 8px 2px var(--textColor);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 0;
+    width: 380px;
+}
+
+
+/* ------------ header ------------ */
+
+.header {
+    max-width: 380px;
+    min-height: 180px;
+    max-height: 200px;
+    background-image: var(--headerimg);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px 15px 0 0;
+    position: relative;
+    transition: all .5s ease;
+}
+
+.clear {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.clear i {
+    font-size: 30px;
+    color: white;
+    transition: all .5s ease-in-out;
+}
+
+.clear i:hover {
+    cursor: pointer;
+    text-shadow: 1px 3px 5px black;
+    transform: rotate(90deg);
+    color: black
+}
+
+.mode-switch {
+    cursor: pointer;
+    height: 25px;
+    width: 50px;
+    box-shadow: 1px 2px 8px 2px white;
+    border-radius: 50px;
+    background-color: black;
+    position: absolute;
+    right: 10px;
+    top: 60px;
+    transition: all .5s ease;
+}
+
+.fa-moon {
+    position: absolute;
+    top: 5px;
+    right: 2px;
+    font-size: .9rem;
+    color: white;
+}
+
+.fa-sun {
+    position: absolute;
+    top: 5px;
+    color: yellow;
+}
+
+.fa-circle {
+    transition: all .5s ease;
+    position: absolute;
+    left: var(--toogle);
+    font-size: 1.6rem;
+    color: rgb(251, 255, 0);
+}
+
+#date {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#task-count {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 20px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+
+/* ------------ content ------------ */
+
+.content {
+    width: 380px;
+    min-height: 100px;
+    height: auto;
+    max-height: 300px;
+    background-color: var(--contentBoxColour);
+    overflow-y: scroll;
+}
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+.content ul {
+    padding: 0;
+    margin: 0;
+}
+
+.item {
+    width: 380px;
+    height: 45px;
+    min-height: 45px;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item i.co {
+    position: absolute;
+    font-size: 25px;
+    padding-left: 5px;
+    left: 15px;
+    top: 8px;
+}
+
+.item i.co:hover {
+    cursor: pointer;
+}
+
+.fa-check-circle {
+    color: #6eb200;
+}
+
+.item p.text {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    left: 50px;
+    top: 5px;
+    color: var(--textColor);
+    max-width: 285px;
+}
+
+.fa-trash-o {
+    color: var(--textColor)
+}
+
+.lineThrough {
+    text-decoration: line-through;
+    color: #ccc;
+}
+
+.item i.de {
+    position: absolute;
+    font-size: 25px;
+    right: 15px;
+    top: 10px;
+}
+
+.item i.de:hover {
+    color: #af0000;
+    cursor: pointer;
+}
+
+
+/* ------------ add item ------------ */
+
+.add-btn {
+    border: 2px solid black;
+}
+
+.add-to-do {
+    position: relative;
+    width: 360px;
+    height: 40px;
+    background-color: #FFF;
+    padding: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.add-to-do i {
+    position: absolute;
+    top: 6px;
+    font-size: 40px;
+    color: #4162f6;
+}
+
+.add-to-do input {
+    position: absolute;
+    left: 50px;
+    height: 35px;
+    width: 310px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    outline: none;
+    padding-left: 10px;
+}
+
+.add-to-do input::-webkit-input-placeholder {
+    color: #4162f6;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+    text-transform: capitalize;
+}

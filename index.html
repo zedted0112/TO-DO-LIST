@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do list</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/4c3e855cdf.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,700;0,900;1,400;1,600;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="todo-name">
+        <span id="firstPart">TO-DO</span> <span>LIST</span>
+    </div>
+    <div class="container">
+
+        <div class="header">
+            <div class="clear">
+                <i id="clear-btn" class="  fa fa-retweet"></i>
+            </div>
+            <div class="mode-switch" title="MODE">
+                <i class="fa fa-moon"></i>
+                <i class="fa fa-sun"></i>
+                <i id="mode-btn" class="fa fa-circle"></i>
+
+
+            </div>
+            <div id="date"></div>
+            <div id="task-count">
+
+            </div>
+        </div>
+        <div class="content">
+            <ul id="list">
+                <!-- <li class="item">
+                    <i class="fa fa-circle-thin co" job="complete" id="0"></i>
+                    <p class="text lineThrough">drink weed</p>
+                    <i class="fa fa-trash-o de" job="delete" id="0"></i>
+                </li> -->
+
+
+            </ul>
+
+        </div>
+        <div class="add-to-do">
+            <i id="add-btn" class="fa fa-plus-circle"></i>
+            <input id="input" type="text" placeholder="add a to-do">
+        </div>
+    </div>
+
+</body>
+
+</html>
